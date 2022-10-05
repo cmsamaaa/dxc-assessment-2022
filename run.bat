@@ -1,9 +1,13 @@
+@REM Required ENV vars:
+@REM JAVA_HOME - location of a JDK 17 home dir (change path if necessary)
+set JAVA_HOME=C:\Program Files\Java\jdk-17.0.2
+
 @REM cd .\frontend
-@REM call npm start
+@REM start cmd /c npm start
+@REM cd ..
+
 
 cd .\backend
-start "New Window" cmd /c mvnw spring-boot:run
-
-pause
+start cmd /c mvnw spring-boot:run
 
 exit
