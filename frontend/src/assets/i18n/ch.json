@@ -1,0 +1,13 @@
+{
+  "Login": "登录",
+  "Logout": "登出",
+  "Welcome": "欢迎页",
+  "Dashboard": "仪表板",
+  "User ID": "用户身份",
+  "Username": "用户名",
+  "Password": "密码",
+  "Welcome back,": "欢迎回来，",
+  "Role": "职位",
+  "Dashboard Title": "欢迎来到经理的仪表板！",
+  "Dashboard Fine Print": "此页面仅限于具有“经理”角色的帐户。 其他角色将无法访问或查看此页面。"
+}

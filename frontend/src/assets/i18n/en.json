@@ -1,0 +1,13 @@
+{
+  "Login": "Login",
+  "Logout": "Logout",
+  "Welcome": "Welcome",
+  "Dashboard": "Dashboard",
+  "User ID": "User ID",
+  "Username": "Username",
+  "Password": "Password",
+  "Welcome back,": "Welcome back,",
+  "Role": "Role",
+  "Dashboard Title": "WELCOME TO THE MANAGERS' DASHBOARD!",
+  "Dashboard Fine Print": "THIS PAGE IS RESTRICTED FOR ACCOUNTS WITH \"MANAGER\" ROLE ONLY. OTHER ROLES WILL NOT BE ABLE TO ACCESS/VIEW THIS PAGE."
+}

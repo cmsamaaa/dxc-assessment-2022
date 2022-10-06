@@ -1,22 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Frontend App</a>
+    <a class="navbar-brand" routerLink="/">Frontend</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li *ngIf="authenticationService.isUserLoggedIn()" class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/welcome" routerLinkActive="active">Welcome</a>
+          <a class="nav-link" aria-current="page" routerLink="/welcome" routerLinkActive="active">{{'Welcome' | translate}}</a>
         </li>
         <li *ngIf="authenticationService.isUserManager()" class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/restricted" routerLinkActive="active">Dashboard</a>
+          <a class="nav-link" aria-current="page" routerLink="/restricted" routerLinkActive="active">{{'Dashboard' | translate}}</a>
         </li>
       </ul>
       <div class="d-flex">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li *ngIf="!authenticationService.isUserLoggedIn()" class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active">Login</a>
+            <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active">{{'Login' | translate}}</a>
           </li>
           <li *ngIf="authenticationService.isUserLoggedIn()" class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="/logout" routerLinkActive="active">Logout</a>
+            <a class="nav-link" aria-current="page" routerLink="/logout" routerLinkActive="active">{{'Logout' | translate}}</a>
           </li>
         </ul>
       </div>

@@ -12,11 +12,18 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
-import {HttpClientModule} from "@angular/common/http";
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ErrorComponent } from './error/error.component';
-import { LogoutComponent } from './logout/logout.component';
-import { RestrictedComponent } from './restricted/restricted.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {WelcomeComponent} from './welcome/welcome.component';
+import {ErrorComponent} from './error/error.component';
+import {LogoutComponent} from './logout/logout.component';
+import {RestrictedComponent} from './restricted/restricted.component';
+import {LanguageComponent} from './language/language.component';
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import { RestrictedComponent } from './restricted/restricted.component';
     WelcomeComponent,
     ErrorComponent,
     LogoutComponent,
-    RestrictedComponent
+    RestrictedComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +47,16 @@ import { RestrictedComponent } from './restricted/restricted.component';
     MatIconModule,
     MatCardModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {
