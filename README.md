@@ -72,12 +72,12 @@ POST /login
 
 #### Responses:
 
-```JSON
+```javascript
 // Valid Request Response
 true
 ```
 
-```JSON
+```javascript
 // Invalid Request Response
 false
 ```
@@ -106,7 +106,7 @@ POST /user/:username
 }
 ```
 
-```JSON
+```javascript
 // Invalid Request Response
 null
 ```
