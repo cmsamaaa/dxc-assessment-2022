@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Account {
-	private int id;
+	private int accountId;
 	private String username;
 	private String password;
 	private String name;
@@ -26,25 +26,25 @@ public class Account {
 		this.password = password;
 	}
 	
-	public Account(int id, String username, String name, String role) {
+	public Account(int accountId, String username, String name, String role) {
 		super();
-		this.id = id;
+		this.accountId = accountId;
 		this.username = username;
 		this.name = name;
 		this.role = role;
 	}
 	
-	public Account(int id, String username, String password, String name, String role) {
+	public Account(int accountId, String username, String password, String name, String role) {
 		super();
-		this.id = id;
+		this.accountId = accountId;
 		this.username = username;
 		this.password = password;
 		this.name = name;
 		this.role = role;
 	}
 
-	public int getId() {
-		return id;
+	public int getAccountId() {
+		return accountId;
 	}
 
 	public String getUsername() {
@@ -65,7 +65,7 @@ public class Account {
 	
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", role="
+		return "Account [id=" + accountId + ", username=" + username + ", password=" + password + ", name=" + name + ", role="
 				+ role + ", dbConn=" + dbConn + "]";
 	}
 
