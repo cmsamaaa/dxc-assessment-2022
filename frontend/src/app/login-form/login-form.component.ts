@@ -31,9 +31,8 @@ export class LoginFormComponent implements OnInit {
   }
 
   handleLogin() {
-    this.accountDataService.executeLoginService(this.username, this.password).subscribe(
-      response => this.authenticate(response)
-    );
+    this.accountDataService.executeLoginService(this.username, this.password)
+      .subscribe(response => this.authenticate(response));
   }
 
   authenticate(response) {

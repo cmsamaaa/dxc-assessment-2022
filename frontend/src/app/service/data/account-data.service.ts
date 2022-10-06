@@ -12,17 +12,46 @@ export class AccountDataService {
   ) { }
 
   executeLoginService(username: string, password: string) {
-    console.log("Execute Login Service");
     return this.http.post('http://localhost:8080/login', {
       username: username,
       password: password
     }).pipe(
-      map(
-        data => {
+      map(data => {
           sessionStorage.setItem('authenticatedUser', username);
           return data;
         }
       )
     );
+  }
+
+  executeAccountService(username: string) {
+    return this.http.get('http://localhost:8080/user/' + username)
+      .pipe(
+        map((data: any) => {
+            sessionStorage.setItem("authenticatedId", data.accountId);
+            sessionStorage.setItem("authenticatedUser", data.username);
+            sessionStorage.setItem("authenticatedName", data.name);
+            sessionStorage.setItem("authenticatedRole", data.role);
+          }
+        )
+      );
+  }
+
+  // storeAccountDetails(username: string) {
+  //   this.executeAccountService(username).subscribe((response: any) => {
+  //     sessionStorage.setItem("authenticatedId", response.accountId);
+  //     sessionStorage.setItem("authenticatedUser", response.username);
+  //     sessionStorage.setItem("authenticatedName", response.name);
+  //     sessionStorage.setItem("authenticatedRole", response.role);
+  //   });
+  // }
+
+  isAccountDataStored() {
+    let accountId = sessionStorage.getItem('authenticatedId');
+    let username = sessionStorage.getItem('authenticatedUser');
+    let name = sessionStorage.getItem('authenticatedName');
+    let role = sessionStorage.getItem('authenticatedRole');
+
+    return accountId && username && name && role;
   }
 }

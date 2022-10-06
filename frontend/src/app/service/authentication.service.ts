@@ -14,7 +14,7 @@ export class AuthenticationService {
   }
 
   destroySession() {
-    sessionStorage.removeItem('authenticatedUser');
+    sessionStorage.clear();
   }
 
 }
