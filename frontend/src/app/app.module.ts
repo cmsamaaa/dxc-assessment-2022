@@ -15,6 +15,7 @@ import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ErrorComponent } from './error/error.component';
     HeaderComponent,
     LoginFormComponent,
     WelcomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
