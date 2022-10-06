@@ -1,6 +1,7 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Router} from "@angular/router";
 import {AccountDataService} from "../service/data/account-data.service";
+import {AuthenticationService} from "../service/authentication.service";
 
 @Component({
   selector: 'app-login-form',
@@ -19,19 +20,26 @@ export class LoginFormComponent implements OnInit {
   invalidLogin: boolean = false;
 
   constructor(
-    private service: AccountDataService
+    private router: Router,
+    public accountDataService: AccountDataService,
+    public authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
+    if (this.authenticationService.isUserLoggedIn())
+      this.router.navigate(['welcome']);
   }
 
   handleLogin() {
-    this.service.executeLoginService(this.username, this.password).subscribe(
-      response => this.handleLoginResponse(response)
+    this.accountDataService.executeLoginService(this.username, this.password).subscribe(
+      response => this.authenticate(response)
     );
   }
 
-  handleLoginResponse(response) {
-      this.invalidLogin = !response;
+  authenticate(response) {
+    if (response)
+      this.router.navigate(['welcome']);
+
+    this.invalidLogin = !response;
   }
 }

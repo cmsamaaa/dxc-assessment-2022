@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,13 @@ export class AccountDataService {
     return this.http.post('http://localhost:8080/login', {
       username: username,
       password: password
-    });
+    }).pipe(
+      map(
+        data => {
+          sessionStorage.setItem('authenticatedUser', username);
+          return data;
+        }
+      )
+    );
   }
 }
