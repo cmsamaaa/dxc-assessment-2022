@@ -16,6 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 import { LogoutComponent } from './logout/logout.component';
+import { RestrictedComponent } from './restricted/restricted.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginFormComponent,
     WelcomeComponent,
     ErrorComponent,
-    LogoutComponent
+    LogoutComponent,
+    RestrictedComponent
   ],
   imports: [
     BrowserModule,

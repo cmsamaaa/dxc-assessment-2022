@@ -13,6 +13,11 @@ export class AuthenticationService {
     return !(user === null)
   }
 
+  isUserManager() {
+    let role = sessionStorage.getItem('authenticatedRole');
+    return role === "Manager";
+  }
+
   destroySession() {
     sessionStorage.clear();
   }

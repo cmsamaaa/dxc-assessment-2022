@@ -4,11 +4,13 @@ import {WelcomeComponent} from "./welcome/welcome.component";
 import {LoginFormComponent} from "./login-form/login-form.component";
 import {ErrorComponent} from "./error/error.component";
 import {LogoutComponent} from "./logout/logout.component";
+import {RestrictedComponent} from "./restricted/restricted.component";
 
 const routes: Routes = [
   { path: '', component: LoginFormComponent},
   { path: 'login', component: LoginFormComponent},
   { path: 'welcome', component: WelcomeComponent},
+  { path: 'restricted', component: RestrictedComponent},
   { path: 'logout', component: LogoutComponent},
   { path: '**', component: ErrorComponent}
 ];

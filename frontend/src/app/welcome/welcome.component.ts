@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 import {AuthenticationService} from "../service/authentication.service";
 import {AccountDataService} from "../service/data/account-data.service";
 
@@ -14,7 +14,6 @@ export class WelcomeComponent implements OnInit {
   role = '';
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     public accountDataService: AccountDataService,
     public authenticationService: AuthenticationService

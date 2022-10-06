@@ -39,15 +39,6 @@ export class AccountDataService {
       );
   }
 
-  // storeAccountDetails(username: string) {
-  //   this.executeAccountService(username).subscribe((response: any) => {
-  //     sessionStorage.setItem("authenticatedId", response.accountId);
-  //     sessionStorage.setItem("authenticatedUser", response.username);
-  //     sessionStorage.setItem("authenticatedName", response.name);
-  //     sessionStorage.setItem("authenticatedRole", response.role);
-  //   });
-  // }
-
   isAccountDataStored() {
     let accountId = sessionStorage.getItem('authenticatedId');
     let username = sessionStorage.getItem('authenticatedUser');
