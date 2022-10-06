@@ -16,7 +16,6 @@ import {AuthenticationService} from "../service/authentication.service";
 export class LoginFormComponent implements OnInit {
   username: string;
   password: string;
-  errorMessage: string = 'Invalid userid or password';
   invalidLogin: boolean = false;
 
   constructor(

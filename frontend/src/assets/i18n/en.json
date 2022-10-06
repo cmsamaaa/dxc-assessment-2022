@@ -1,6 +1,7 @@
 {
   "Login": "Login",
   "Logout": "Logout",
+  "Invalid login": "Invalid userid or password",
   "Welcome": "Welcome",
   "Dashboard": "Dashboard",
   "User ID": "User ID",
