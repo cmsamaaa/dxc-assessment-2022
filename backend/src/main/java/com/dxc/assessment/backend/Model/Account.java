@@ -15,10 +15,23 @@ public class Account {
 		super();
 	}
 	
+	public Account(String username) {
+		super();
+		this.username = username;
+	}
+	
 	public Account(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
+	}
+	
+	public Account(int id, String username, String name, String role) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.name = name;
+		this.role = role;
 	}
 	
 	public Account(int id, String username, String password, String name, String role) {
@@ -82,5 +95,31 @@ public class Account {
 		}
 		
 		return result;
+	}
+	
+	public Account RetrieveAccount() {
+		Account account = new Account();
+		
+		try {
+			Class.forName("org.sqlite.JDBC");
+			Connection conn = dbConn.GetConnection();
+			
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM accounts WHERE username = ?");
+			stmt.setString(1, this.getUsername());
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next())
+				account = new Account(rs.getInt("accountId"), rs.getString("username"), rs.getString("name"), rs.getString("role"));
+			else
+				account = null;
+			
+			dbConn.CloseConnection(conn);
+			
+		} catch (Exception e) {
+			System.err.println(e.getClass().getName() + ": " + e.getMessage());
+		}
+		
+		return account;
 	}
 }
