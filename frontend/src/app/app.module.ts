@@ -13,12 +13,16 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    WelcomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
