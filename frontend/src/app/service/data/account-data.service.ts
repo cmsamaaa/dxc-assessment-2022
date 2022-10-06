@@ -17,7 +17,9 @@ export class AccountDataService {
       password: password
     }).pipe(
       map(data => {
-          sessionStorage.setItem('authenticatedUser', username);
+          if (data)
+            sessionStorage.setItem('authenticatedUser', username);
+
           return data;
         }
       )
