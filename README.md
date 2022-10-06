@@ -42,7 +42,13 @@ You may download it [here](https://www.oracle.com/java/technologies/javase/jdk17
 
 If this is your first time running this project, you will be required to install the Node dependencies for the frontend Angular.js project.
 
-You may can enter `npm ci` into the terminal in `./frontend` folder, or simply run the batch script `./setup-npm.bat`. This will step will install all necessary dependencies based on the `./frontend/package-lock.json`. This process may take awhile.
+You may can enter `npm ci` into the terminal in `./frontend` folder. This will step will install all necessary dependencies based on the `./frontend/package-lock.json`. This process may take awhile.
+
+To simplify this step, you may run the following batch script:
+
+```shell
+.\setup-npm.bat
+```
 
 #### For Windows only
 
