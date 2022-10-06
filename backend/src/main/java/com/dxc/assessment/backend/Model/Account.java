@@ -1,4 +1,4 @@
-package com.dxc.assessment.backend.Models;
+package com.dxc.assessment.backend.Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
