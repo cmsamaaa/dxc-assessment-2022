@@ -91,7 +91,7 @@ false
 ### 2. Get Account Details
 
 ```http request
-POST /user/:username
+GET /user/:username
 ```
 
 | Parameter   | Type     | Description                                                        |
