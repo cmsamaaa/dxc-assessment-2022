@@ -14,6 +14,7 @@ The frontend app will run on `http://localhost:4200` and backend app on `http://
     -   [Node.js](#nodejs)
     -   [Java JDK 17](#java-jdk-17)
 -   [Setup Guide (Local)](#setup-guide-local)
+-   [Login Information](#login-information)
 -   [API Documentation](#api-documentation)
     1. [Login](#1-login)
         - [Responses](#responses)
@@ -61,6 +62,16 @@ A batch script has been created for your convenience in starting up both the fro
 > **NOTE:** Amend the `JAVA_HOME` in this batch script to the Java JDK 17 directory on your device.
 
 Alternatively, you may start the frontend app by entering `npm start` into the terminal from `./frontend` folder, and entering `mvnw spring-boot:run` into the terminal from `./backend` folder.
+
+## Login Information
+
+    Manager Account (required to see and use manager dashboard)
+    Username: user1
+    Password: 111
+	
+	Staff Account 
+    Username: user2
+    Password: 222
 
 ## API Documentation
 
